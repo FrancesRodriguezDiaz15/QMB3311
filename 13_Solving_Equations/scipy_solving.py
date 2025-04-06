@@ -275,7 +275,8 @@ def secant_root_f(x0, x1, tol, num_iter):
     """
     
     for i in range(num_iter):
-        
+
+# if the absolute value of f(x2) is less than the tolerance chosen, keeo returning zero        
         x2 = x1 - f(x1)*(x1-x0)/(f(x1)-f(x0))
         if (abs(f(x2)) < tol):
             return x2
@@ -346,6 +347,9 @@ print(f(x_root))
 # to calculate the derivative of ```f(x)```, which we will call ```f_prime(x)```.
 
 def f_prime(x):
+    """
+    Calculates the derivative of '''f(x)''
+    """
     diff_out = 1/x + math.exp(-x)
     return diff_out
 
